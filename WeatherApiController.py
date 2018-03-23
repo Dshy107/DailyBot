@@ -18,13 +18,23 @@ json_data = requests.get(url).json()
 formatted_data_weather = json_data['weather'][0]['main']
 formatted_data_main = json_data['main']['temp']
 
-# Kelvin to C conversion
+# Kelvin to Celsius conversion
 formatted_data_main = formatted_data_main - 273.15
+
+def getTemp():
+
+    weatherTemp = formatted_data_main
+    return weatherTemp
+
+def getWeather():
+
+    theWeather=formatted_data_weather
+    return theWeather
+
 
 print(json_data)
 print('\n')
 print(formatted_data_weather)
 print('\n')
-print(formatted_data_main)
-
+print("It's " + str(round(formatted_data_main,2)) + " degrees Celsius")
 
