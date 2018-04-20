@@ -4,8 +4,8 @@
 # Date Created: 20/04/2018
 # Developed in PyCharm
 
-from View import WeatherViewer
-from Controller import MotionSensorController
+import WeatherViewer
+import MotionSensorController
 
 
 WeatherDisplay = WeatherViewer()

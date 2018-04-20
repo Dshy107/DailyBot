@@ -3,17 +3,15 @@
 # Current User: Rasmus laptop
 # Date Created: 13/04/2018
 # Developed in PyCharm
-
-import tkinter.font
-from tkinter import *
+import sys
+from Tkinter import *
 
 # import theme as Theme
-
-from Controller import WeatherApiController
+import WeatherApiController
 
 # EARLY DEVELOPMENT, USING: https://stackoverflow.com/questions/43843624/create-textbox-widgets-in-tkinter-of-different-length-for-multiple-labels-in-dif
 
-win = Tk()
+win = tkinter()
 WAC = WeatherApiController.WeatherApiController()
 
 # Create N frames on top of each other
@@ -41,10 +39,14 @@ for n in range(N):
 
     # function should be used to update the GUI according o the newest information.
     def update():
-        city = entryboxes[frames[0]][0].get()
-        WAC.setJson(city)
-        entryboxes[frames[0]][1].insert(0, WAC.getTemp())
-        entryboxes[frames[0]][2].insert(0, WAC.getWeather())
+        if entryboxes[frames[0]][0].get() != '':
+            city = entryboxes[frames[0]][0].get()
+            WAC.setJson(city)
+            entryboxes[frames[0]][1].insert(0, WAC.getTemp())
+            entryboxes[frames[0]][2].insert(0, WAC.getWeather())
+            print('I updated')
+        else:
+            entryboxes[frames[0]][0] = 'Write the name of a city.'
 
 
 # Launch the app
