@@ -33,7 +33,13 @@ class WeatherApiController():
         the_weather= self.formatted_data_weather
         return the_weather
 
-#print('*****************************************')
-#x = WeatherApiController()
-#print(x.getTemp())
-#print(x.getWeather())
+    def setJson(self, city):
+        self.city = city
+        url = self.api_adress + self.city
+        json_data = requests.get(url).json()
+        return json_data
+
+# print('*****************************************')
+# x = WeatherApiController()
+# print(x.getTemp())
+# print(x.getWeather())

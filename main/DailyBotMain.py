@@ -5,7 +5,10 @@
 # Developed in PyCharm
 
 from View import WeatherViewer
+from Controller import MotionSensorController
+
 
 WeatherDisplay = WeatherViewer()
+MotionSensorController = MotionSensorController()
 
-WeatherDisplay
+MotionSensorController

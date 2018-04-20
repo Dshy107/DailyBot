@@ -7,16 +7,16 @@
 import tkinter.font
 from tkinter import *
 
-import theme as Theme
+# import theme as Theme
 
 from Controller import WeatherApiController
 
-#EARLY DEVELOPMENT, USING: https://stackoverflow.com/questions/43843624/create-textbox-widgets-in-tkinter-of-different-length-for-multiple-labels-in-dif
+# EARLY DEVELOPMENT, USING: https://stackoverflow.com/questions/43843624/create-textbox-widgets-in-tkinter-of-different-length-for-multiple-labels-in-dif
 
 win = Tk()
 WAC = WeatherApiController.WeatherApiController()
 
-#Create N frames on top of each other
+# Create N frames on top of each other
 N = 1
 frames = []
 
@@ -24,29 +24,29 @@ for n in range(N):
     frame = Frame(win)
     frame.pack(side = 'top', anchor = 'w')
 
-    #Store the current frame reference in "frames
+    # Store the current frame reference in "frames
     frames.append(frame)
 
-    #Widgets that can go into each frame
+    # Widgets that can go into each frame
     entryboxes = {frame: [] for frame in frames}
     for i, frame in enumerate(frames):
-        label = tkinter.Label(frame, text = 'Label '+str(i+1))
+        label = tkinter.Label(frame, text = 'WeatherInfo ')
         label.pack(side = 'left')
         # Add 5 Entry boxes with random widths
-        for i in range(2):
+        for i in range(3):
             e = Entry(frame, width = 20)
             e.pack(side = 'left')
             # Store the current entrybox reference in "entryboxes"
             entryboxes[frame].append(e)
-    def press():
-        message = 'Button Pressed'
-        win.update()
 
-        b = Button(win, command=press).pack()
+    # function should be used to update the GUI according o the newest information.
+    def update():
+        city = entryboxes[frames[0]][0].get()
+        WAC.setJson(city)
+        entryboxes[frames[0]][1].insert(0, WAC.getTemp())
+        entryboxes[frames[0]][2].insert(0, WAC.getWeather())
 
-# Add some text in the 4th box of the 3rd frame
-entryboxes[frames[0]][1].insert(0,WAC.getTemp())
 
-#Launch the app
-win.configure(background=Theme.GUI_bg)
+# Launch the app
+# win.configure(background=Theme.GUI_bg)
 win.mainloop()
