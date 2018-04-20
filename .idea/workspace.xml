@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f761046-d683-485f-8eb0-349a1fce5437" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3d_print_models/Dailybot 2.0 Box Front v7.stl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3d_print_models/Dailybox 2.0 Body v7.stl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controller/MotionSensorController.py" afterPath="$PROJECT_DIR$/Controller/MotionSensorController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controller/WeatherApiController.py" afterPath="$PROJECT_DIR$/Controller/WeatherApiController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/WeatherViewer.py" afterPath="$PROJECT_DIR$/View/WeatherViewer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/DailyBotMain.py" afterPath="$PROJECT_DIR$/main/DailyBotMain.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3d_print_models/Dailybot 2.0 Box Back v6.stl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
